@@ -4,12 +4,12 @@ jQuery.fn.ghostwalk = function(options) {
   , timeout : 3000
   };
   var options = jQuery.extend(defaults,options);
-	return this.each(function() {
+  return this.each(function() {
     obj = jQuery(this);
-		obj.hide().slideDown(options.speed);
+    obj.hide().slideDown(options.speed);
     setTimeout(function() {
       obj.slideUp(options.speed);
       setTimeout(function() {obj.remove(); }, options.speed);
     },options.timeout);
-	});
+  });
 }
