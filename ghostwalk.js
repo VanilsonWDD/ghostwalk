@@ -8,8 +8,7 @@ jQuery.fn.ghostwalk = function(options) {
     obj = jQuery(this);
     obj.hide().slideDown(options.speed);
     setTimeout(function() {
-      obj.slideUp(options.speed);
-      setTimeout(function() {obj.remove(); }, options.speed);
+      obj.slideUp(options.speed,function() { obj.remove(); });
     },options.timeout);
   });
 }
